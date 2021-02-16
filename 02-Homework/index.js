@@ -1,4 +1,20 @@
 const inquirer = require("inquirer");
+const mysql = require("mysql");
+const db = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "Zughaieyr6!",
+    database: "employeemanagmentsystem"
+}
+
+);
+
+db.connect((
+    err) => {
+    if (err) throw err;
+    console.log("connected successfully");
+}
+);
 
 function init() {
     return inquirer.prompt([
@@ -11,5 +27,8 @@ function init() {
 }
 
 init();
+
+
+
 
 
